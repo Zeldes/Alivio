@@ -1,0 +1,246 @@
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+body {
+  @extend %Lato-500;
+  font-size: 20px;
+  line-height: 1.5;
+  color: $deafult;
+}
+
+.container {
+  max-width: 1400px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.container--big {
+  max-width: 1536px;
+}
+
+.logo {
+  transition: all 0.4s;
+  outline: 0;
+  &:hover {
+    opacity: 0.7;
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px $accent;
+    border-radius: 5px;
+  }
+  &:active {
+    opacity: 0.9;
+  }
+}
+
+.menu__link,
+.login__link,
+.footer-top__link {
+  transition: all 0.3s;
+  outline: 0;
+  &:hover {
+    color: $accent;
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px $accent;
+    border-radius: 5px;
+  }
+}
+
+.btn {
+  color: $white;
+  background-color: $accent;
+  border-radius: 4px;
+  transition: all 0.5s;
+  outline: 0;
+  &:hover {
+    background-color: $hover; 
+  }
+  &:focus {
+      box-shadow: 0 0 0 2px $box;
+      border-radius: 5px;
+    }
+  &:active {
+    background-color: $active;
+  }
+}
+
+.title {
+  @extend %Lato-500;
+  font-size: 24px;
+  color: $deafult;
+}
+
+.subtitle {
+  @extend %Georgia-700;
+  color: $accent;
+  font-size: 50px;
+  max-width: 584px;
+}
+
+.video {
+  position: relative;
+  background-size: cover;
+  background-position: right center;
+  border-radius: 16px;
+  max-width: 896px;
+  height: 516px;
+  width: 100%;
+  outline: 0;
+  transition: all 0.4s;
+}
+
+.video:focus {
+  box-shadow: 0 0 0 3px $box;
+}
+
+.video::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 896px;
+  width: 100%;
+  height: 516px;
+  border-radius: 16px;
+  transition: background-color 0.4s, box-shadow 0.4s;
+}
+
+.video:hover::before {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.video:active::before {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.video::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 42%;
+  bottom: 0;
+  margin: auto;
+  background-image: url(../images/icons/play.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 80px;
+  height: 80px;
+  transition: transform 0.4s;
+}
+
+.video:hover::after {
+  transform: scale(1.5);
+}
+
+.video:active::after {
+  transform: scale(0.6);
+}
+
+.card {
+  width: 296px;
+  background-color: $white;
+  border-radius: 6px;
+  box-shadow: 0px 3.62249px 18.1125px rgba(165, 165, 165, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 20px 30px;
+  &__title {
+    position: relative;
+    @extend %Lato-600;
+    font-size: 14px;
+    line-height: 1;
+    padding-bottom: 12px;
+    margin-bottom: 13px;
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: #000;
+      right: -7px;
+      left: -7px;
+      bottom: 0;
+      height: 1px;
+    }
+  }
+  &__avatar {
+    margin-bottom: 13px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  &__name {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  &__subtitle {
+    @extend %Georgia-700;
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+  &__item {
+    @extend %Lato-400;
+    font-size: 14px;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.burger {
+  position: relative;
+  display: none;
+  width: 44px;
+  height: 44px;
+  z-index: 11;
+  &__line,
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: $accent;
+    right: 0;
+    width: 40px;
+    height: 3px;
+    top: 20px;
+    transition: transform 0.4s;
+  }
+  &::before,
+  &::after {
+    background-color: $accent;
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    right: 0;
+    transition: transform 0.4s;
+  }
+  &::before {
+    top: 8px;
+  }
+  &::after {
+    bottom: 9px;
+    top: unset;
+  }
+
+}
+.burger--active::before {
+  transform: rotate(45deg);
+  top: 21px;
+}
+.burger--active::after {
+  transform: rotate(-45deg);
+  bottom: 21px;
+}
+.burger--active .burger__line {
+  transform: scale(0);
+}

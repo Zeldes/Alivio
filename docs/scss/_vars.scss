@@ -1,0 +1,39 @@
+$deafult: #424242;
+$header: #292929;
+$accent: #01996D;
+$hover: #054a36;
+$active: #2e725f;
+$bg: #245852;
+$border: #D6D6D6;
+$box: #f6d932;
+$white: #fff;
+
+%Lato-400 {
+  font-family: 'Lato-Regular', sans-serif;
+  font-weight: 400;
+}
+
+%Lato-500 {
+  font-family: 'Lato-Medium', sans-serif;
+  font-weight: 500;
+}
+
+%Lato-600 {
+  font-family: 'Lato-Semibold', sans-serif;
+  font-weight: 600;
+}
+
+%Rubik-700 {
+  font-family: 'Rubik-Bold', sans-serif;
+  font-weight: 700;
+}
+
+%Georgia-400 {
+  font-family: 'Georgia', sans-serif;
+  font-weight: 400;
+}
+
+%Georgia-700 {
+  font-family: 'Georgia-Bold', sans-serif;
+  font-weight: 700;
+}
